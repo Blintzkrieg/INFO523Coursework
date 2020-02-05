@@ -72,22 +72,32 @@ library(philentropy)
 
 #this is the two-dimensional dataset of objects and properties on page 80
 xValues <- c(1,2,3,4,5)
-a1 <- c(1.5,2,1.6,1.2,1.5)
-a2 <- c(1.7,1.9,1.8,1.5,1.0)
+#A1 and A2 plus the new data point x
+a1 <- c(1.5,2,1.6,1.2,1.5, 1.4)
+a2 <- c(1.7,1.9,1.8,1.5,1.0, 1.6)
 
-twoDdataSet = cbind(c(1.5,2,1.6,1.2,1.5), c(1.7,1.9,1.8,1.5,1.0))
-newDataPoint = rbind(c(1.4,1.6))
+#twoDdataSet = cbind(c(1.5,2,1.6,1.2,1.5), c(1.7,1.9,1.8,1.5,1.0))
+
+twoDdataSetb = cbind(c(1.5,2,1.6,1.2,1.5, 1.4), c(1.7,1.9,1.8,1.5,1.0, 1.6))
+rownames(twoDdataSetb) <- c('x1', 'x2', 'x3', 'x4', 'x5', 'x')
+colnames(twoDdataSetb) <- c('A1', 'A2')
+
+#newDataPoint = rbind(c(1.4,1.6))
 
 #Euclidean distance
-dist(twoDdataSet, method="euclidean")
+dist(twoDdataSetb, method="euclidean")
+#Database points in order of similarity with x (most to least similar): 
+#x2, x5, x3, x4, x1
 
 #Manhattan distance
-dist(twoDdataSet, method="manhattan")
+dist(twoDdataSetb, method="manhattan")
 
 #supremum distance
-
+dist(twoDdataSetb, method="maximum")
 
 #cosine similarity
+
+#cosine_dist(a1, a2, testNA=FALSE)
 
 #2.8(b)
 #normalized and ranked using Euclidean distance
