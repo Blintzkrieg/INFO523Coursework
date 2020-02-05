@@ -96,7 +96,7 @@ dist(twoDdataSetb, method="manhattan")
 dist(twoDdataSetb, method="maximum")
 
 #cosine similarity
-
+#according to R documentation, cosine(x, y) where x and y are vectors (a1 and a2) produces a similarity matrix. 
 #cosine_dist(a1, a2, testNA=FALSE)
 
 #2.8(b)
