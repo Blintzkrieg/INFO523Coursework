@@ -70,7 +70,7 @@ qqplot(age, percentfat)
 install.packages("philentropy")
 library(philentropy)
 
-#this is the two-dimensional dataset of objects and properties on page 80
+#this is the two-dimensional dataset of objects and properties on page 81
 xValues <- c(1,2,3,4,5)
 a1 <- c(1.5,2,1.6,1.2,1.5)
 a2 <- c(1.7,1.9,1.8,1.5,1.0)
@@ -87,11 +87,12 @@ dist(twoDdataSet, method="manhattan")
 #supremum distance
 
 
+
 #cosine similarity
 
 #2.8(b)
 #normalized and ranked using Euclidean distance
 
-dist(A)
+
 
 
