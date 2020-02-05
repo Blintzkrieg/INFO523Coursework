@@ -9,7 +9,7 @@ ages <- c(13, 15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30,33, 33, 35,
 mean(ages)
 
 #2.2(b) mode is 25. It occurs 4 times.
-installed.packages("modes")
+install.packages("modes")
 library(modes)
 modes(ages)
 
@@ -40,6 +40,10 @@ quantile(ages)
 qqnorm(ages)
 
 #2.3  need clarification
+#using formula (2.3) on page 46 of the textbook
+approxMed <- 21 + (((3194/2) - 950)/1500)*29
+
+
 
 #2.4(a) mean, median, and standard deviation for ages and %fat
 age <- c(23,23,27,27,39,41,47,49,50,52,54,54,56,57,58,58,60,61)
@@ -62,5 +66,18 @@ boxplot(percentfat)
 plot.default(age, percentfat)
 qqplot(age, percentfat)
 
-#2.8 
+#2.8(a) 
+install.packages("philentropy")
+library(philentropy)
+#Euclidean distance
+
+#Manhattan distance
+
+#supremum distance
+
+#cosine similarity
+
+#2.4(b)
+#normalized and ranked using Euclidean distance
+
 
