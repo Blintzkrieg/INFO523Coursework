@@ -108,7 +108,24 @@ dist(dataSetB, method="maximum")
 #cosine_dist(a1, a2, testNA=FALSE)
 
 #2.8(b)
-#normalized
+#normalizing to vector length of 1
+print(dataSetA)
+squared <- dataSetA^2
+print(squared)
+
+#this is Angela messing around trying to understand the data structure
+is.atomic(dataSetA)
+is.recursive(dataSetA)
+a3 <-c
+print(dataSetA)
+print(a3)
+print(dataSetA[7])
+ls()
+typeof(dataSetA)
+class(dataSetA)
+str(dataSetA)
+help(str)
+
 
 
 #ranked using Euclidean distance
