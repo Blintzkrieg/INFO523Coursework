@@ -1,5 +1,5 @@
 #Chapter 2 HW by Angela Hughes and Hannah Andrews
-#Page 80, Exercises 2.2, 2.3, 2.4, 2.8
+#Page 80-81, Exercises 2.2, 2.3, 2.4, 2.8
 
 library(dplyr)
 
@@ -49,6 +49,7 @@ approxMed <- 21 + (((3194/2) - 950)/1500)*29
 print(approxMed)
 
 
+
 #2.4(a) mean, median, and standard deviation for ages and %fat
 age <- c(23,23,27,27,39,41,47,49,50,52,54,54,56,57,58,58,60,61)
 percentfat <- c(9.5,26.5,7.8,17.8,31.4,25.9,27.4,27.2,31.2,34.6,
@@ -76,6 +77,8 @@ install.packages("philentropy")
 library(philentropy)
 
 #the 2-D data set before adding the new data point
+a1 <- c(1.5,2,1.6,1.2,1.5)
+a2 <- c(1.7,1.9,1.8,1.5,1.0)
 dataSetA = cbind(c(1.5,2,1.6,1.2,1.5), c(1.7,1.9,1.8,1.5,1.0))
 rownames(dataSetA) <- c('x1', 'x2', 'x3', 'x4', 'x5')
 colnames(dataSetA) <- c('A1', 'A2')
@@ -83,13 +86,12 @@ print(dataSetA)
 plot(dataSetA)
 
 #the 2-D data set after adding the new data point x=(1.4, 1.6)
+#newDataPoint = (1.4,1.6)
 dataSetB = cbind(c(1.5,2,1.6,1.2,1.5, 1.4), c(1.7,1.9,1.8,1.5,1.0, 1.6))
 rownames(dataSetB) <- c('x1', 'x2', 'x3', 'x4', 'x5', 'x')
 colnames(dataSetB) <- c('A1', 'A2')
 print(dataSetB)
 plot(dataSetB)
-
-#newDataPoint = rbind(c(1.4,1.6))
 
 #Euclidean distance
 dist(dataSetB, method="euclidean")
@@ -102,10 +104,29 @@ dist(dataSetB, method="manhattan")
 #supremum distance
 dist(dataSetB, method="maximum")
 
-
 #cosine similarity
 #according to R documentation, cosine(x, y) where x and y are vectors (a1 and a2) produces a similarity matrix. 
-#cosine_dist(a1, a2, testNA=FALSE)
+#this arrangement (below) treats a1 as an entire vector of length 6, and a2 as another vector of equal length.
+#It yields one cosine similarity score.
+a1cos <- c(1.5,2,1.6,1.2,1.5, 1.4)
+a2cos <- c(1.7,1.9,1.8,1.5,1.0, 1.6)
+cosine_dist(P=a1cos, Q=a2cos, testNA=FALSE)
+#We may want another approach to compare two-dimensional angles pairwise.
+#in order to compare each a1cos, a2cos coordinate like x,y coordinates, 
+#the data will need another arrangement.
+x1prop <- c(1.5,1.7)
+x2prop <- c(2,1.9)
+x3prop <- c(1.6,1.8)
+x4prop <- c(1.2,1.5)
+x5prop <- c(1.5,1.0)
+xprop <- c(1.4,1.6)
+cosine_dist(P=x1prop, Q=xprop, testNA=FALSE)
+cosine_dist(P=x2prop, Q=xprop, testNA=FALSE)
+cosine_dist(P=x3prop, Q=xprop, testNA=FALSE)
+cosine_dist(P=x4prop, Q=xprop, testNA=FALSE)
+cosine_dist(P=x5prop, Q=xprop, testNA=FALSE)
+#Database points in order of similarity with x(1.4,1.6) (most to least similar):
+#x1, x3, x4, x2, x5
 
 #2.8(b)
 #normalizing to vector length of 1
@@ -127,9 +148,28 @@ str(dataSetA)
 help(str)
 
 
+#2.8(b)
+#normalized. 
+#unit vector divided by its own magnitude, where a1 and a2 are treated like x and y coordinates.
+#this includes the added data point (1.4, 1.6) introduced in part (a) above.
+a1 <- c(1.5,2,1.6,1.2,1.5, 1.4)
+a2 <- c(1.7,1.9,1.8,1.5,1.0, 1.6)
+squardSum <- a1^2 + a2^2
+print(squardSum)
+roots <- squardSum^(1/2)
+print(roots)
+a1normed <- a1 / roots
+a2normed <- a2 / roots
+print(a1normed)
+print(a2normed)
+dataSetE <- cbind(c(a1normed), c(a2normed))
+colnames(dataSetE) <- c('A1', 'A2')
+rownames(dataSetE) <- c('x1', 'x2', 'x3', 'x4', 'x5', 'x')
+print(dataSetE)
 
 #ranked using Euclidean distance
-
-
+dist(dataSetE, method="euclidean")
+#The closest values (least distant) to 'x' are, from closest to farthest:
+#x5, x2, x4, x3. x1 
 
 
