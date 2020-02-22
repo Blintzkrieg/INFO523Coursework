@@ -45,31 +45,18 @@ infoproject <- MIDUS2 %>%
                            "B1POCMAJ")
 save(infoproject, file = "C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject")
 
+head(infoproject)
 
+write.csv(infoproject,'C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject.csv')
 
+data <-read_csv('C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject.csv')
 
+write.table(infoproject,
+            file='C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject.csv',
+            quote = FALSE, sep = ",")
 
+(data <-read_csv('C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject.csv'))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#write.table(read.dta
-#           (file.choose("C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject")), 
-#           file="C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject.csv", 
-#           quote = FALSE, sep = ",")
-
-save(infoproject, file = "C:/Users/hanna/Documents/git/INFO523 Coursework/infoproject")
 
 # Project 4: current diet and exercise practices https://midus.colectica.org/Item/int.example/be8e20c9-edcf-432c-a358-d12b13f545e4/2
 
