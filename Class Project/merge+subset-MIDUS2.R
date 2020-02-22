@@ -50,5 +50,5 @@ bio <- da29282.0001[myvars3]
 # Merge survey and biomarker data 
 MIDUS2 <- merge(MIDUS2P1, bio, by = "M2ID", all.x = TRUE)
 
-save(MIDUS2, file = "C:/Users/hanna/Documents/git/INFO523 Coursework/MIDUS2.rda")
+save(MIDUS2, file = "C:/Users/hanna/Documents/git/INFO523 Coursework/INFO523Coursework/MIDUS2.rda")
 mean(as.numeric(MIDUS2$B1PDEPRE))
