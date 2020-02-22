@@ -128,6 +128,25 @@ cosine_dist(P=x5prop, Q=xprop, testNA=FALSE)
 #Database points in order of similarity with x(1.4,1.6) (most to least similar):
 #x1, x3, x4, x2, x5
 
+#2.8(b)
+#normalizing to vector length of 1
+print(dataSetA)
+squared <- dataSetA^2
+print(squared)
+
+#this is Angela messing around trying to understand the data structure
+is.atomic(dataSetA)
+is.recursive(dataSetA)
+a3 <-c
+print(dataSetA)
+print(a3)
+print(dataSetA[7])
+ls()
+typeof(dataSetA)
+class(dataSetA)
+str(dataSetA)
+help(str)
+
 
 #2.8(b)
 #normalized. 
