@@ -1,0 +1,151 @@
+M2ID
+M2FAMNUM
+SAMPLMAJ
+B1STATUS
+B1PRSEX		Respondent Sex (M/F) 
+B1PA1		Physical Health - self evaluated
+B1PA2		Mental/emotional health self evaluated	
+B1PA38A		Ever smoked cigarettes regularly
+B1PA37		Age had first cigarette
+B1PANHED	Anhedonia (continuous)
+B1PDEPAF	Depressed Affect (continuous)
+B1PDEPRE	Depressed Affect + Anhedon (continuous)
+B1PANXIE	Anxiety Disorder (continuous)
+B1PPANIC	Panic Attack (continuous)
+B1PF7A		Racial origins #1
+B1PF7B		Racial origins #2
+B1PF7C		Racial origins #3
+B1PF7D		Racial origins #4
+B1PF8B		Racial background #2
+B1PF3		Ethnic group best describes background
+B1PF2A		Ethnic group #1
+B1PF2B		Ethnic group #2
+B1PF2C		Ethnic group #3
+B1SSPIRI	Spirituality
+B1SRELID	Religious Identification
+B1SRELPR	Private Religious Practices
+B1SRELSU	Religious Support
+B1SRELCA	Religious/Spiritual Coping A
+B1SRELCB	Religious/Spiritual Coping B
+B1SMNDFU	Mindfulness
+B1SSPRTE	Daily Spiritual Experiences
+B1SHLOCS	Health Locus of control-Self
+B1SHLOCO	Health Locus of control-Others
+B1SC1		Covered by hlthcare insurance currently
+B1SC3A		R: Insurer directly provides hlth insur
+B1SC3B		R: Employer provides health insurance
+B1SC3C		R: SP's employer provides hlth insurance
+B1SC3D		R: Union provides health insurance
+B1SC3E		R: SP's union provides health insurance
+B1SC3F		R: Medicare provides health insurance
+B1SC3G		R: Medicaid/oth provides hlth insurance
+B1SC3H		R: Military provides health insurance
+B1SA52		Needed med care, couldn't get it (12 mo)
+B1SUSEMD	Number Times Seeing Medical Doctor (12 mo)
+B1SA54A		# times psychiatrist for ment hlth (12mo)
+B1SA54B		# time genrl doctor for mentl hlth(12mo)
+B1SA54C		# time counselor for mental hlth (12 mo)
+B1SA56A		Acupuncture frequency (12 mo)
+B1SA56B		Biofeedback frequency (12 mo)
+B1SA56C		Chiropractor frequency (12 mo)
+B1SA56D		Energy healing frequency (12 mo)
+B1SA56F		Exercise/movement therapy freq (12 mo)
+B1SA56G		Herbal therapy frequency (12 mo)
+B1SA56H		High dose mega-vitamins frequency (12mo)
+B1SA56I		Homeopathy frequency (12 mo)
+B1SA56J		Hypnosis frequency (12 mo)
+B1SA56K		Imagery techniques frequency (12 mo)
+B1SA56L		Massage therapy frequency (12 ms)
+B1SA56M		Prayer/other spiritual freq (12 mo)
+B1SA56N		Relaxation/mediation frequency (12 mo)
+B1SA56Q		Special diet frequency (12 mo)
+B1SA56R		Spiritual healing by others freq (12 mVigorous job activity frequency (winter)o)
+B1SA56S		Oth non-traditional therapy freq (12 mo)
+B1SA30A		Vigorous job activity frequency (summer)
+B1SA30B		Vigorous job activity frequency (winter)
+B1SA30C		Vigorous chores activity freq (summer)
+B1SA30D		Vigorous chores activity freq (winter)
+B1SA30E		Vigorous leisure activity freq (summer)
+B1SA30F		Vigorous leisure activity freq (winter)
+B1SA31A		Moderate job activity frequency (summer)
+B1SA31B		Moderate job activity frequency (winter)
+B1SA31C		Moderate chores activity freq (summer)
+B1SA31D		Moderate chores activity freq (winter)
+B1SA31E		Moderate leisure activity freq (summer)
+B1SA31F		Moderate leisure activity freq (winter)
+B1SA32A		Light job activity frequency (summer)
+B1SA32B		Light job activity frequency (winter)
+B1SA32C		Light chores activity frequency (summer)
+B1SA32D		Light chores activity frequency (winter)
+B1SA32E		Light leisure activity freq (summer)
+B1SA32F		Light leisure activity freq (winter)
+B1SA57A		Hours of sleep on workdays
+B1SA57B		Minutes of sleep on workdays
+B1SA58A		Hours of sleep on non-workdays
+B1SA58B		Minutes of sleep on non-workdays
+B1SA61A		Trouble fall asleep frequency	
+B1SA61B		Wake up during the night frequency
+B1SA61C		Wake up too early frequency
+B1SA61D		Feel unrested during the day frequency
+B1SEARN1	HH total earning income:original value
+B1SPNSN1	HH total pension income:original value
+B1SSEC1		HH total soc.sec income:original value
+B1SG7		Difficult to pay monthly bills
+B1SG23		$ left or owed if cash assets & pd debts
+B1SG24A		Amt assets/$ owed/left over
+B1POCC		Occupation code - Respondent
+B1POCMAJ	R's current occupation - major groups
+B1PAGE_M2	Age 
+B2DB2		How many cigarettes did you smoke?
+B2DB3		How many drinks did you have?
+B1STINC1	HH total income(wage,pension,ssi,gov asst):original value
+B1PB1		Highest level of education completed
+			
+
+				
+B1PWGHT1	Survey Weight
+B1PWGHT2	Survey Weight
+B1PWGHT3	Survey Weight
+B1PWGHT4
+B1PWGHT5
+B1PWGHT6
+B1PWGHT7
+B1PWGHT8
+B1PWGHT9
+
+B4HSYMX 	Any Symptoms and Chronic Conditions?--Yes/No
+B4HSYMN		Total number of Symptoms and Chronic Conditions
+B4PBMI		BMI (Body Mass Index)
+B4P1GS		Average BP(sitting) systolic
+B4P1GD		Average BP(sitting) diastolic
+B4BLDL		Blood LDL Cholesterol (mg/dL)
+B4BCHOL		Blood Total Cholesterol (mg/dL)
+B4BHDL		Blood HDL Cholesterol (mg/dL)
+B4BTRIGL	Blood Triglycerides (mg/dL)
+B4BDHEA		Blood DHEA (ng/mL)
+B4BDHEAS	Blood DHEA-S (ug/dL)
+B4BCRP		Blood C-Reactive Protein (ug/mL)
+B4BIL6		Blood Serum IL6 (pg/mL)
+B4BMSDIL6	Blood Serum MSD IL6 (pg/mL)
+B4BSIL6R	Blood Serum Soluble IL6 Receptor (pg/mL)
+B4BHA1C		Blood Hemoglobin A1c %
+B4BGLUC		Blood Fasting Glucose levels mg/dL
+B4BINSLN	Blood Fasting Insulin levels uIU/mL
+B4BIGF1		Blood Fasting IGF1 (Insulin-like Growth Factor 1) ng/mL)
+B4BCORTL	Urine Cortisol (ug/dL)
+B4BNECL		Ratio Urine Norepinephrine/Cortisol
+B4BCLCRE	Urine Cortisol adjusted for Urine Creatinine (ug/g)
+B4BSCL3A	Saliva cortisol Post-orthostatic average (nmol/L)
+B4BSCL42	Saliva cortisol final dupl#2 (nmol/L)
+B4BEPIN		Urine Epinephrine (ug/dL)
+B4BEPI12	Urine Epinephrine 12 hour (ug/12h)
+B4BEPCRE	Urine Epinephrine adjusted for Urine Creatinine (ug/g)
+B4BNECL		Ratio Urine Norepinephrine/Cortisol
+B4BNOREP	Urine Norepinephrine (ug/dL)
+B4BNE12		Urine Norepinephrine 12 hour (ug/12h)
+B4BNOCRE	Urine Norepinephrine adjusted for Urine Creatinine (ug/g)
+B4BDOPA		Urine Dopamine (ug/dL)
+B4BDOCRE	Urine Dopamine adjusted for Urine Creatinine (ug/g)
+B4BDOP12	Urine Dopamine 12 hour (ug/12h)
+B4QCESD		
+B4QPS_PS

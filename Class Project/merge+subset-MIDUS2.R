@@ -21,8 +21,10 @@ myvars <- c("M2ID", "M2FAMNUM", "SAMPLMAJ", "B1STATUS", "B1PRSEX", "B1PA1", "B1P
             "B1SA31B", "B1SA31C", "B1SA31D", "B1SA31E", "B1SA31F", "B1SA32A", "B1SA32B", "B1SA32C",
             "B1SA32D", "B1SA32E", "B1SA32F", "B1SA57A", "B1SA57B", "B1SA58A", "B1SA58B", "B1SA61A",
             "B1SA61B", "B1SA61C", "B1SA61D", "B1SEARN1", "B1SPNSN1",  "B1SSEC1", "B1SG7","B1SG23",
-            "B1SG24A", "B1POCC", "B1POCMAJ")
+            "B1SG24A", "B1POCC", "B1POCMAJ","B1PAGE_M2", "B1STINC1", "B1PB1")
 survey1 <- da04652.0001[myvars]
+
+# Daily diary data "B2DB2", "B2DB3", 
 
 # Load mortality data 
 # load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/DS0002/04652-0002-Data.rda')
@@ -51,4 +53,5 @@ bio <- da29282.0001[myvars3]
 MIDUS2 <- merge(MIDUS2P1, bio, by = "M2ID", all.x = TRUE)
 
 save(MIDUS2, file = "C:/Users/hanna/Documents/git/INFO523 Coursework/INFO523Coursework/MIDUS2.rda")
-mean(as.numeric(MIDUS2$B1PDEPRE))
+
+
