@@ -2,16 +2,16 @@ M2ID
 M2FAMNUM
 SAMPLMAJ
 B1STATUS
-B1PRSEX		Respondent Sex (M/F) 
-B1PA1		Physical Health - self evaluated
-B1PA2		Mental/emotional health self evaluated	
-B1PA38A		Ever smoked cigarettes regularly
-B1PA37		Age had first cigarette
-B1PANHED	Anhedonia (continuous)
+B1PRSEX		Respondent Sex (M/F) 						bsex
+B1PA1		Physical Health - self evaluated			bSubjectivePhysicalHealth
+B1PA2		Mental/emotional health self evaluated		bSubjectiveMentalHealth
+B1PA38A		Ever smoked cigarettes regularly			bEverSmokeRegularly
+B1PA37		Age had first cigarette						bAgeFirstCig
+B1PANHED	Anhedonia (continuous)						
 B1PDEPAF	Depressed Affect (continuous)
-B1PDEPRE	Depressed Affect + Anhedon (continuous)
-B1PANXIE	Anxiety Disorder (continuous)
-B1PPANIC	Panic Attack (continuous)
+B1PDEPRE	Depressed Affect + Anhedon (continuous)		bDepression
+B1PANXIE	Anxiety Disorder (continuous)				
+B1PPANIC	Panic Attack (continuous)					bPanicAttack
 B1PF7A		Racial origins #1
 B1PF7B		Racial origins #2
 B1PF7C		Racial origins #3
@@ -21,15 +21,15 @@ B1PF3		Ethnic group best describes background
 B1PF2A		Ethnic group #1
 B1PF2B		Ethnic group #2
 B1PF2C		Ethnic group #3
-B1SSPIRI	Spirituality
-B1SRELID	Religious Identification
-B1SRELPR	Private Religious Practices
-B1SRELSU	Religious Support
-B1SRELCA	Religious/Spiritual Coping A
+B1SSPIRI	Spirituality								bSpirituality
+B1SRELID	Religious Identification					bReligiousId
+B1SRELPR	Private Religious Practices					bPrivReligPractice
+B1SRELSU	Religious Support							bReligiousSupport
+B1SRELCA	Religious/Spiritual Coping A				
 B1SRELCB	Religious/Spiritual Coping B
-B1SMNDFU	Mindfulness
-B1SSPRTE	Daily Spiritual Experiences
-B1SHLOCS	Health Locus of control-Self
+B1SMNDFU	Mindfulness									bMindfulness
+B1SSPRTE	Daily Spiritual Experiences					bDailySpiritExp
+B1SHLOCS	Health Locus of control-Self				
 B1SHLOCO	Health Locus of control-Others
 B1SC1		Covered by hlthcare insurance currently
 B1SC3A		R: Insurer directly provides hlth insur
@@ -45,22 +45,22 @@ B1SUSEMD	Number Times Seeing Medical Doctor (12 mo)
 B1SA54A		# times psychiatrist for ment hlth (12mo)
 B1SA54B		# time genrl doctor for mentl hlth(12mo)
 B1SA54C		# time counselor for mental hlth (12 mo)
-B1SA56A		Acupuncture frequency (12 mo)
-B1SA56B		Biofeedback frequency (12 mo)
-B1SA56C		Chiropractor frequency (12 mo)
-B1SA56D		Energy healing frequency (12 mo)
-B1SA56F		Exercise/movement therapy freq (12 mo)
-B1SA56G		Herbal therapy frequency (12 mo)
-B1SA56H		High dose mega-vitamins frequency (12mo)
-B1SA56I		Homeopathy frequency (12 mo)
-B1SA56J		Hypnosis frequency (12 mo)
-B1SA56K		Imagery techniques frequency (12 mo)
-B1SA56L		Massage therapy frequency (12 ms)
-B1SA56M		Prayer/other spiritual freq (12 mo)
-B1SA56N		Relaxation/mediation frequency (12 mo)
-B1SA56Q		Special diet frequency (12 mo)
-B1SA56R		Spiritual healing by others freq (12 mVigorous job activity frequency (winter)o)
-B1SA56S		Oth non-traditional therapy freq (12 mo)
+B1SA56A		Acupuncture frequency (12 mo)				beveracupuncture
+B1SA56B		Biofeedback frequency (12 mo)				beverbiofeedback
+B1SA56C		Chiropractor frequency (12 mo)				beverchiropractor
+B1SA56D		Energy healing frequency (12 mo)			beverenergy
+B1SA56F		Exercise/movement therapy freq (12 mo)		bevermovetherapy
+B1SA56G		Herbal therapy frequency (12 mo)			beverherbtherapy
+B1SA56H		High dose mega-vitamins frequency (12mo)	bevermegavitamins
+B1SA56I		Homeopathy frequency (12 mo)				beverhomeopathy
+B1SA56J		Hypnosis frequency (12 mo)					beverhypnosis
+B1SA56K		Imagery techniques frequency (12 mo)		beverimagetech
+B1SA56L		Massage therapy frequency (12 ms)			bevermassage
+B1SA56M		Prayer/other spiritual freq (12 mo)			beverpray
+B1SA56N		Relaxation/mediation frequency (12 mo)		bevermeditate
+B1SA56Q		Special diet frequency (12 mo)				beverspecialdiet
+B1SA56R		Spiritual healing by others freq (12 mo)	beverspiritheal
+B1SA56S		Oth non-traditional therapy freq (12 mo)	beverotherheal
 B1SA30A		Vigorous job activity frequency (summer)
 B1SA30B		Vigorous job activity frequency (winter)
 B1SA30C		Vigorous chores activity freq (summer)
@@ -98,7 +98,7 @@ B1POCMAJ	R's current occupation - major groups
 B1PAGE_M2	Age 
 B2DB2		How many cigarettes did you smoke?
 B2DB3		How many drinks did you have?
-B1STINC1	HH total income(wage,pension,ssi,gov asst):original value
+B1STINC1	HH total income(wage,pension,ssi,gov asst):original value	bTotHHInc
 B1PB1		Highest level of education completed
 			
 
@@ -114,8 +114,8 @@ B1PWGHT8
 B1PWGHT9
 
 B4HSYMX 	Any Symptoms and Chronic Conditions?--Yes/No
-B4HSYMN		Total number of Symptoms and Chronic Conditions
-B4PBMI		BMI (Body Mass Index)
+B4HSYMN		Total number of Symptoms and Chronic Conditions		bTotChronic
+B4PBMI		BMI (Body Mass Index)								bBmi
 B4P1GS		Average BP(sitting) systolic
 B4P1GD		Average BP(sitting) diastolic
 B4BLDL		Blood LDL Cholesterol (mg/dL)
@@ -147,5 +147,5 @@ B4BNOCRE	Urine Norepinephrine adjusted for Urine Creatinine (ug/g)
 B4BDOPA		Urine Dopamine (ug/dL)
 B4BDOCRE	Urine Dopamine adjusted for Urine Creatinine (ug/g)
 B4BDOP12	Urine Dopamine 12 hour (ug/12h)
-B4QCESD		
-B4QPS_PS
+B4QCESD		CESD: Center for Epidemiologic Studies Depression Scale		bCesDepression
+B4QPS_PS	Perceived Stress Scale										bPerceivedStress
