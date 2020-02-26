@@ -80,5 +80,70 @@ mean(ageBins) #mean is about the same, smoothed and pre-smoothed
 #ten to the power of whichever exponent achieves this. Basically, we're moving the decimal
 #point over so that our largest value sits just to the right of the decimal. 
 
+#3.6
+#normalizing the following data
+preNormed <- c(200, 300, 400, 600, 1000)
+
+#(a) min-max normalization by setting min=0 and max=1
+minMaxNormed <- (((preNormed[1])-200)/(1000-200))*(1-0)+0
+minMaxNormed <- append(minMaxNormed,(((preNormed[2])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+minMaxNormed <- append(minMaxNormed,(((preNormed[3])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+minMaxNormed <- append(minMaxNormed,(((preNormed[4])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+minMaxNormed <- append(minMaxNormed,(((preNormed[5])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+print(minMaxNormed)
+
+#(b) zscore norming
+sd(preNormed)
+mean(preNormed)
+sdNormed <- ((preNormed[1])-mean(preNormed))/(sd(preNormed))
+sdNormed <- append(sdNormed, ((preNormed[2])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+sdNormed <- append(sdNormed, ((preNormed[3])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+sdNormed <- append(sdNormed, ((preNormed[4])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+sdNormed <- append(sdNormed, ((preNormed[5])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+print(sdNormed)
+
+#(c) z-score norming using mean absolute deviation
+mAbsolute <- abs(preNormed[1] - mean(preNormed)) + abs(preNormed[2] - mean(preNormed)) + abs(preNormed[3] - mean(preNormed)) + abs(preNormed[4] - mean(preNormed)) + abs(preNormed[5] - mean(preNormed))
+mAbsolute <- mAbsolute/length(preNormed)              
+
+meanAbsNormed <- c()
+meanAbsNormed <- ((preNormed[1])-mean(preNormed))/(mAbsolute)
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[2])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[3])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[4])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[5])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+
+#(d) decimal norming
+decNormed <- preNormed / 10^3
+#most of the values are less than 1, with the exception of the max value, which is 1.
+
 #3.8
-#
+age <- c(23,23,27,27,39,41,47,49,50,52,54,54,56,57,58,58,60,61)
+percentfat <- c(9.5,26.5,7.8,17.8,31.4,25.9,27.4,27.2,31.2,34.6,
+                42.5,28.8,33.4,30.2,34.1,32.9,41.2,35.7)
+#(a) Normalize the two attributes based on z-score normalization
+sd(age)
+mean(age)
+ageSDnormed <- (age - mean(age))/(sd(age))
+print(ageSDnormed)
+
+sd(percentfat)
+mean(percentfat)
+fatSDnormed <- (percentfat - mean(percentfat)) / (sd(percentfat))
+print(fatSDnormed)
+
+#(b) Pearson's correlation coefficient and covariance
+library(ggplot2)
+corr <- cor.test(x=age, y=percentfat, method = 'pearson')
+print(corr)
+#age and body fat % are positively correlated, since the correlation
+#coefficient is a positive value, and is strong (close to 1)
+ggplot(data=NULL, aes(x=age, y=percentfat)) + 
+  geom_point(color='blue') + 
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)
+
+
+#3.11
+#(a) create equal-width histogram, width 10.
+print(ages)
+hist(ages)
