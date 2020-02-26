@@ -112,7 +112,9 @@ apply(revenue_cube, c("loc"), FUN = function(x) sum(x, na.rm = TRUE))
 apply(revenue_cube, c("year", "prod"), FUN=function(x) sum(x, na.rm=TRUE))
 apply(revenue_cube, c("prod", "loc"), FUN = function(x) sum(x, na.rm = TRUE))
 
-# REQUIRED Exercises
+# REQUIRED Exercises----
 # 1 Generate 3-D Cuboids 
 apply(revenue_cube, c("year", "prod", "loc"), FUN = function(x) sum(x, na.rm = TRUE))
 apply(revenue_cube, c("month", "loc", "prod"), FUN = function(x) sum(x, na.rm = TRUE))
+
+# 2 What is 4-D or the base cuboid in this example?
