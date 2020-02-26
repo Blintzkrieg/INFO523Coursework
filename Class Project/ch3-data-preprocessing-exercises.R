@@ -246,6 +246,7 @@ CrossTable(MIDUS2$beverpray, MIDUS2$bevermeditate,
 ## Required exercises 
 # 1.	What attributes are there in your data set?----
 dim(MIDUS2)
+dimnames(MIDUS2)
 # There are 145 attributes in our dataset. They include income, education, occupation, age, sex, race, use of complementary and alternative medicines, subjective phsyical and mental health measures, religiosity, spiritualty, mindfulness practices, biomarker data, and survey weights. 
 
 # 2.	Do you have highly correlated attributes? How did you find out about the correlations or lack of correlations?----
