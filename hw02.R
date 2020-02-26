@@ -80,5 +80,38 @@ mean(ageBins) #mean is about the same, smoothed and pre-smoothed
 #ten to the power of whichever exponent achieves this. Basically, we're moving the decimal
 #point over so that our largest value sits just to the right of the decimal. 
 
-#3.8
-#
+#3.6
+#normalizing the following data
+preNormed <- c(200, 300, 400, 600, 1000)
+
+#(a) min-max normalization by setting min=0 and max=1
+minMaxNormed <- (((preNormed[1])-200)/(1000-200))*(1-0)+0
+minMaxNormed <- append(minMaxNormed,(((preNormed[2])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+minMaxNormed <- append(minMaxNormed,(((preNormed[3])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+minMaxNormed <- append(minMaxNormed,(((preNormed[4])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+minMaxNormed <- append(minMaxNormed,(((preNormed[5])-200)/(1000-200))*(1-0)+0, after=length(minMaxNormed))
+print(minMaxNormed)
+
+#(b) zscore norming
+sd(preNormed)
+mean(preNormed)
+sdNormed <- ((preNormed[1])-mean(preNormed))/(sd(preNormed))
+sdNormed <- append(sdNormed, ((preNormed[2])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+sdNormed <- append(sdNormed, ((preNormed[3])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+sdNormed <- append(sdNormed, ((preNormed[4])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+sdNormed <- append(sdNormed, ((preNormed[5])-mean(preNormed))/(sd(preNormed)), after=length(minMaxNormed))
+print(sdNormed)
+
+#(c) z-score norming using mean absolute deviation
+
+mAbsolute <- abs(preNormed[1] - mean(preNormed)) + abs(preNormed[2] - mean(preNormed)) + abs(preNormed[3] - mean(preNormed)) + abs(preNormed[4] - mean(preNormed)) + abs(preNormed[5] - mean(preNormed))
+mAbsolute <- mAbsolute/length(preNormed)              
+
+meanAbsNormed <- c()
+meanAbsNormed <- ((preNormed[1])-mean(preNormed))/(mAbsolute)
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[2])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[3])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[4])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+meanAbsNormed <- append(meanAbsNormed, ((preNormed[5])-mean(preNormed))/(mAbsolute), after=length(meanAbsNormed))
+
+              
