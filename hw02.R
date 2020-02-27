@@ -145,5 +145,6 @@ ggplot(data=NULL, aes(x=age, y=percentfat)) +
 
 #3.11
 #(a) create equal-width histogram, width 10.
+#hist() automatically used bin width of ten.
 print(ages)
 hist(ages)
