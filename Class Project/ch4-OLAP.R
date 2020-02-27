@@ -118,3 +118,5 @@ apply(revenue_cube, c("year", "prod", "loc"), FUN = function(x) sum(x, na.rm = T
 apply(revenue_cube, c("month", "loc", "prod"), FUN = function(x) sum(x, na.rm = TRUE))
 
 # 2 What is 4-D or the base cuboid in this example?
+apply(revenue_cube, c("year", "month", "loc", "prod"), FUN=function(x) sum(x, na.rm = TRUE))
+# The 4-D or base cuboid includes all four dimensions: year, month, location, and product. 
