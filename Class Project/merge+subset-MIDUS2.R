@@ -8,7 +8,7 @@
 
 # Load MIDUS2 Survey datasets
 # Load Questionnaire data 
-load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/DS0001/04652-0001-Data.rda')
+load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/MIDUS2-Survey.rda')
 myvars <- c("M2ID", "M2FAMNUM", "SAMPLMAJ", "B1STATUS", "B1PRSEX", "B1PA1", "B1PA2", "B1PA38A",
             "B1PA37", "B1PANHED", "B1PDEPAF", "B1PDEPRE", "B1PANXIE", "B1PPANIC", "B1PF7A", "B1PF7B",
             "B1PF7C", "B1PF7D", "B1PF8B", "B1PF3", "B1PF2A", "B1PF2B", "B1PF2C", "B1SSPIRI", 
@@ -23,35 +23,62 @@ myvars <- c("M2ID", "M2FAMNUM", "SAMPLMAJ", "B1STATUS", "B1PRSEX", "B1PA1", "B1P
             "B1SA61B", "B1SA61C", "B1SA61D", "B1SEARN1", "B1SPNSN1",  "B1SSEC1", "B1SG7","B1SG23",
             "B1SG24A", "B1POCC", "B1POCMAJ","B1PAGE_M2", "B1STINC1", "B1PB1")
 survey1 <- da04652.0001[myvars]
-
-# Daily diary data "B2DB2", "B2DB3", 
+str(survey1)
 
 # Load mortality data 
-# load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/DS0002/04652-0002-Data.rda')
+# load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/MIDUS2-Mortality.rda')
 # survey2 <- da04652.0002
+
 # Load weights 
-load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/DS0003/04652-0003-Data.rda')
+load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Survey/MIDUS2-Weights.rda')
 myvars2 <- c("M2ID", "B1PWGHT1", "B1PWGHT2", "B1PWGHT3", "B1PWGHT4", "B1PWGHT5", "B1PWGHT6", 
              "B1PWGHT7", "B1PWGHT8", "B1PWGHT9")
 survey2 <- da04652.0003[myvars2]
+str(survey2)
 
 # Merge Survey data and weights 
 MIDUS2P1 <- merge(survey1, survey2, by = "M2ID", all.x = TRUE, all.y = TRUE)
+str(MIDUS2P1)
 
 # Did not load coded text data 
 
 # Load MIDUS2 Biomarker data 
-load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Biomarker/DS0001/29282-0001-Data.rda')
+load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Biomarker/MIDUS2-Biomarkers.rda')
 myvars3 <- c("M2ID", "B4HSYMX", "B4HSYMN", "B4PBMI", "B4P1GS", "B4P1GD", "B4BLDL", "B4BCHOL", "B4BHDL", 
              "B4BTRIGL", "B4BDHEA", "B4BDHEAS", "B4BCRP", "B4BIL6", "B4BMSDIL6", "B4BSIL6R", "B4BHA1C",
              "B4BGLUC", "B4BINSLN", "B4BIGF1", "B4BCORTL", "B4BNECL", "B4BCLCRE", "B4BSCL3A", "B4BSCL42",
              "B4BEPIN", "B4BEPI12", "B4BEPCRE", "B4BNECL", "B4BNOREP", "B4BNE12", "B4BNOCRE", "B4BDOPA",
              "B4BDOCRE", "B4BDOP12", "B4QCESD", "B4QPS_PS")
 bio <- da29282.0001[myvars3]
+str(bio)
 
 # Merge survey and biomarker data 
-MIDUS2 <- merge(MIDUS2P1, bio, by = "M2ID", all.x = TRUE)
+MIDUS2 <- merge(MIDUS2P1, bio, by = "M2ID", all = TRUE)
 
+# Load daily diary data 
+load(file = 'C:/Users/hanna/Documents/git/AHL/R/MIDUS 2/MIDUS 2 Daily Diary/MIDUS2-DailyDiary.rda')
+myvars4 <- c("M2ID", "B2DB2", "B2DB3")
+diary <- da26841.0001[myvars4]
+
+diary_means <- diary %>% 
+  group_by(M2ID) %>% 
+  summarise(bMeanCig = mean(B2DB2, na.rm = TRUE), 
+            bMeanAlc = mean(B2DB3, na.rm = TRUE))
+head(diary_means)
+str(diary_means)
+
+# Merge diary_means to MIDUS2
+MIDUS2 <- merge(MIDUS2, diary_means, by = "M2ID", all = TRUE)
+str(MIDUS2)
+
+# Save to both info and ahl git repos 
 save(MIDUS2, file = "C:/Users/hanna/Documents/git/INFO523 Coursework/INFO523Coursework/MIDUS2.rda")
+save(MIDUS2, file = "C:/Users/hanna/Documents/git/AHL/R/MIDUS2.rda")
 
+# Create table with merge info 
+mydatasets <- c('M2survey', 'M2weights', 'merge survey and weights', 'm2bio', 'merge survey/weights/bio', 'm2diary-means', 'merge survey/weights/bio/diary')
+obs <- c(4963, 2257, 4963, 1255, 5164, 2022, 5209)
+varnum <- c(100, 10, 109, 37, 145, 3, 147)
+M2MergeInfo <- cbind.data.frame(mydatasets, obs, varnum)
+print(M2MergeInfo)
 

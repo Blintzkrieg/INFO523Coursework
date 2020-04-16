@@ -2,7 +2,7 @@
 # Hannah Andrews and Angela Hughes 
 # INFO 523 
 # Spring 2020 
-# Due 3/11
+# Due 3/16
 
 # 6.3 
 
@@ -14,4 +14,6 @@
 # Required R Exercises
 # Mine association rules from your dataset. 
 # Discuss a couple of interesting rules mined. 
+
+
 
